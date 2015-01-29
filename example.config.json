@@ -1,0 +1,32 @@
+{
+	"environment": "development",
+	"application": {
+		"storeTweets": false,
+		"pushTweets": false,
+		"trackKeywords": ""
+	},
+	"twitter": {
+		"development": {
+			"consumerKey": "",
+			"consumerSecret": "",
+			"accessTokenKey": "",
+			"accessTokenSecret": ""
+		},
+		"production": {
+			"consumerKey": "",
+			"consumerSecret": "",
+			"accessTokenKey": "",
+			"accessTokenSecret": ""
+		}
+	},
+	"mongo": {
+		"hostname": "127.0.0.1",
+		"port": "27017",
+		"username": "",
+		"password": "",
+		"database": "twitter-mobile-photos"
+	},
+	"socket": {
+		"port": 3000
+	}
+}
