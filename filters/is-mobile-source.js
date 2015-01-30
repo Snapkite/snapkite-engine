@@ -1,6 +1,7 @@
 var isiPhone = function (tweet) {
   return /iPhone/i.test(tweet.source);
 };
+
 var isAndroid = function (tweet) {
   return /Android/i.test(tweet.source);
 };

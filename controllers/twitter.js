@@ -4,14 +4,14 @@ var Twitter = require('twitter');
 // Tweet filters
 //
 var hasMobilePhoto = require('../filters/has-mobile-photo');
-var isExplicit = require('../filters/is-explicit');
+var isAdultContent = require('../filters/is-adult-content/is-adult-content');
 var isRetweet = require('../filters/is-retweet');
 var isMobileSource = require('../filters/is-mobile-source');
 
 var isValidTweet = function (tweet) {
   return (
       hasMobilePhoto(tweet)
-      && !isExplicit(tweet)
+      && !isAdultContent(tweet)
       && !isRetweet(tweet)
       && isMobileSource(tweet)
   );
