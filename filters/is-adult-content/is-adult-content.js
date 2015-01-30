@@ -26,7 +26,7 @@ module.exports = function (tweet) {
     || isExplicitDescription(tweet)
   ) {
     return true;
-  } else {
-    return false;
   }
+
+  return false;
 };
