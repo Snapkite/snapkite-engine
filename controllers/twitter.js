@@ -7,6 +7,8 @@ var hasMobilePhoto = require('../filters/has-mobile-photo');
 var isAdultContent = require('../filters/is-adult-content/is-adult-content');
 var isRetweet = require('../filters/is-retweet');
 var isMobileSource = require('../filters/is-mobile-source');
+var hasGeoCoordinates = require('../filters/has-geo-coordinates');
+
 
 var isValidTweet = function (tweet) {
   return (
@@ -14,6 +16,7 @@ var isValidTweet = function (tweet) {
       && !isAdultContent(tweet)
       && !isRetweet(tweet)
       && isMobileSource(tweet)
+      && hasGeoCoordinates(tweet)
   );
 };
 

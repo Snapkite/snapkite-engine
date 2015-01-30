@@ -24,7 +24,7 @@
 		"port": "27017",
 		"username": "",
 		"password": "",
-		"database": "twitter-mobile-photos"
+		"database": "snapkite"
 	},
 	"socket": {
 		"port": 3000

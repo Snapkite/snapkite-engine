@@ -19,9 +19,6 @@ var save = function (tweet) {
         if (error) {
             console.error('[Snapkite] Failed to save tweet. Error: ' + error);
         }
-
-        console.log('[Snapkite] Saved tweet');
-        console.log(tweet.text);
     });
 };
 

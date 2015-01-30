@@ -9,7 +9,8 @@ require('./controllers/twitter')(SNAPKITE_CONFIG, function (tweet) {
   }
 
   if (SNAPKITE_CONFIG.application.pushTweets) {
-  	console.log('[Snapkite] Pushing tweet');
-  	io.sockets.emit('tweet', tweet);
+  	//console.log('[Snapkite] Emitting tweet');
+  	//io.sockets.emit('tweet', tweet);
+  	global.io.emit('tweet', tweet);
   }
 });
