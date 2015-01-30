@@ -9,14 +9,30 @@ var isRetweet = require('../filters/is-retweet');
 var isMobileSource = require('../filters/is-mobile-source');
 var hasGeoCoordinates = require('../filters/has-geo-coordinates');
 
-var isValidTweet = function (tweet) {
-  return (
-      hasMobilePhoto(tweet)
-      && !isAdultContent(tweet)
-      && !isRetweet(tweet)
-      && isMobileSource(tweet)
-      && hasGeoCoordinates(tweet)
-  );
+var isValidTweet = function (tweet, config) {
+  var validTweet = true;
+
+  if (validTweet && config.twitter.filters.isAdultContent) {
+    validTweet = (!isAdultContent(tweet));
+  }
+
+  if (validTweet && config.twitter.filters.hasGeoCoordinates) {
+    validTweet = hasGeoCoordinates(tweet);
+  }  
+
+  if (validTweet && config.twitter.filters.hasMobilePhoto) {
+    validTweet = hasMobilePhoto(tweet);
+  } 
+
+  if (validTweet && config.twitter.filters.isMobileSource) {
+    validTweet = isMobileSource(tweet);
+  } 
+
+  if (validTweet && config.twitter.filters.isRetweet) {
+    validTweet = (!isRetweet(tweet));
+  }
+  
+  return validTweet;
 };
 
 module.exports = function (config, handleTweet) {
@@ -36,11 +52,8 @@ module.exports = function (config, handleTweet) {
     token_secret: TWITTER_ACCESS_TOKEN_SECRET
   });
 
-  console.log('[Snapkite] Twitter config:');
-  console.dir(config.twitter);
-
   twitter.on('tweet', function (tweet) {
-    if (isValidTweet(tweet)) {
+    if (isValidTweet(tweet, config)) {
       handleTweet(tweet);
     }
   });

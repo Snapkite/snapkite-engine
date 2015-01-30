@@ -18,11 +18,15 @@ var isExplicitDescription = function (tweet) {
 };
 
 module.exports = function (tweet) {
-  return (
+  if (
     tweet.possibly_sensitive
-      || isExplicitText(tweet)
-      || isExplicitName(tweet)
-      || isExplicitLocation(tweet)
-      || isExplicitDescription(tweet)
-  );
+    || isExplicitText(tweet)
+    || isExplicitName(tweet)
+    || isExplicitLocation(tweet)
+    || isExplicitDescription(tweet)
+  ) {
+    return true;
+  } else {
+    return false;
+  }
 };

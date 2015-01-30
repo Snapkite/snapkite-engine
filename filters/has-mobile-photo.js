@@ -11,12 +11,20 @@ var isMobileMediaSize = function (tweet) {
 };
 
 module.exports = function (tweet) {
-  return (
+
+  if (
     tweet.entities
     && tweet.entities.media
+    && tweet.entities.media[0]
+    && tweet.entities.media[0].type
     && tweet.entities.media[0].type === "photo"
+    && tweet.source
     && tweet.source !== "web"
     && textHasImageUrl(tweet)
     && isMobileMediaSize(tweet)
-  );
+  ) {
+    return true;
+  }
+
+  return false;
 };

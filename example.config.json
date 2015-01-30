@@ -17,6 +17,13 @@
 			"consumerSecret": "",
 			"accessTokenKey": "",
 			"accessTokenSecret": ""
+		},
+		"filters": {
+			"isAdultContent": true,
+			"hasGeoCoordinates": true,
+			"hasMobilePhoto": true,
+			"isMobileSource": true,
+			"isRetweet": true
 		}
 	},
 	"mongo": {
