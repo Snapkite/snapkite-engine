@@ -23,7 +23,7 @@ Works together with:
 
 ## In The Wild
 
-[Snapkite](https://snapkite.com)
+[Snapkite.com](https://snapkite.com)
 
 ## License
 
