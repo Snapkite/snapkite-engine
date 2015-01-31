@@ -1,6 +1,6 @@
 # Snapkite
 
-Filter mobile photos posted on Twitter.
+Snapkite gives you filtered stream of mobile photos posted publicly on Twitter.
 
 ## Install
 
