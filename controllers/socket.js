@@ -10,23 +10,6 @@ module.exports = function (config) {
     socketConnection.on('disconnect', function () {
       console.log('[Snapkite][Socket] Client disconnected');
     });
-
-    // socketConnection.on('event', function (data) {
-    //   console.log('[Snapkite][Socket] Event');
-    // });
-
-    // socketConnection.on('get-room-id', function() {
-    //   console.log('[Snapkite][Socket] Client asked for room id');
-
-    //   var roomId = uuid.v4();
-
-    //   socketConnection.join(roomId);
-
-    //   console.log('[Snapkite][Socket] Emitting message with room id ' + roomId);
-
-    //   socketConnection.emit('room-id', roomId);
-    // });
-
   });
 
   server.listen(config.port, function () {

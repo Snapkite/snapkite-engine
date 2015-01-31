@@ -29,9 +29,6 @@ var createMongoUrl = function (configuration) {
 
 var init = function (config) {
 
-  console.log('[Snapkite] Mongo config:');
-  console.dir(config);
-
   var mongoUrl = createMongoUrl(config);
 
   global.mongoose = require('mongoose');
