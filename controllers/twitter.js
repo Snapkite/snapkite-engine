@@ -3,12 +3,12 @@ var Twitter = require('node-tweet-stream');
 //
 // Tweet filters
 //
-var hasMobilePhoto = require('../filters/has-mobile-photo');
-var isAdultContent = require('../filters/is-adult-content/is-adult-content');
-var isRetweet = require('../filters/is-retweet');
-var isMobileSource = require('../filters/is-mobile-source');
-var hasGeoCoordinates = require('../filters/has-geo-coordinates');
-var hasText = require('../filters/has-text');
+var hasMobilePhoto = require('../snapkite-filters/has-mobile-photo/');
+var isAdultContent = require('../snapkite-filters/is-adult-content/');
+var isRetweet = require('../snapkite-filters/is-retweet/');
+var isMobileSource = require('../snapkite-filters/is-mobile-source/');
+var hasGeoCoordinates = require('../snapkite-filters/has-geo-coordinates/');
+var hasText = require('../snapkite-filters/has-text/');
 
 var isValidTweet = function (tweet, config) {
   var validTweet = true;

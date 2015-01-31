@@ -11,6 +11,12 @@ node_modules
 config.json
 
 ###############################
+# Snapkite filters
+###############################
+
+snapkite-filters
+
+###############################
 # OS generated files
 ###############################
 
