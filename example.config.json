@@ -6,13 +6,7 @@
 		"trackKeywords": ""
 	},
 	"twitter": {
-		"development": {
-			"consumerKey": "",
-			"consumerSecret": "",
-			"accessTokenKey": "",
-			"accessTokenSecret": ""
-		},
-		"production": {
+		"api": {
 			"consumerKey": "",
 			"consumerSecret": "",
 			"accessTokenKey": "",

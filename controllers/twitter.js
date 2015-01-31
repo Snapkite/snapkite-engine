@@ -41,11 +41,10 @@ var isValidTweet = function (tweet, config) {
 };
 
 module.exports = function (config, handleTweet) {
-  var ENVIRONMENT = config.environment;
-  var TWITTER_CONSUMER_KEY = config.twitter[ENVIRONMENT].consumerKey;
-  var TWITTER_CONSUMER_SECRET = config.twitter[ENVIRONMENT].consumerSecret;
-  var TWITTER_ACCESS_TOKEN_KEY = config.twitter[ENVIRONMENT].accessTokenKey;
-  var TWITTER_ACCESS_TOKEN_SECRET = config.twitter[ENVIRONMENT].accessTokenSecret;
+  var TWITTER_CONSUMER_KEY = config.twitter.api.consumerKey;
+  var TWITTER_CONSUMER_SECRET = config.twitter.api.consumerSecret;
+  var TWITTER_ACCESS_TOKEN_KEY = config.twitter.api.accessTokenKey;
+  var TWITTER_ACCESS_TOKEN_SECRET = config.twitter.api.accessTokenSecret;
   var TWITTER_PICTURE_TRACK_KEYWORD = "pic twitter com";
 
   var keywords = [TWITTER_PICTURE_TRACK_KEYWORD, config.application.trackKeywords].join(' ');
