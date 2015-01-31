@@ -2,15 +2,20 @@
 
 Snapkite gives you filtered stream of mobile photos posted publicly on Twitter.
 
-Example: [Snapkite.com](http://snapkite.com)
+Works together with:
+* [Snapkite Filters](https://github.com/fedosejev/snapkite-filters.git)
+* [Snapkite API Server](https://github.com/fedosejev/snapkite-api-server.git)
 
 ## Install
 
-1. `npm install`
-2. `cp example.config.json config.json`
-3. Add your Twitter API keys to `config.json`
-4. Change default MongoDB config in `config.json` as necessary
-5. Get filters: `git clone https://github.com/fedosejev/snapkite-filters.git`
+1. `git clone https://github.com/fedosejev/snapkite.git`
+2. `cd snapkite`
+3. `npm install`
+4. `cp example.config.json config.json`
+5. Add your Twitter API keys to `config.json`
+6. Change default MongoDB config in `config.json` as needed
+7. Clone filters: `git clone https://github.com/fedosejev/snapkite-filters.git`
+8. Copy sample config and change list of adult keywords as needed: `cp snapkite-filters/is-adult-content/example.config.json snapkite-filters/is-adult-content/config.json`
 
 ## Run
 
