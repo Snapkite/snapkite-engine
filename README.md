@@ -21,7 +21,7 @@ Works together with:
 
 `npm start`
 
-## In The Wild
+## Powered By
 
 [Snapkite.com](https://snapkite.com)
 
