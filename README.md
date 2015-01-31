@@ -3,8 +3,8 @@
 Snapkite gives you filtered stream of mobile photos posted publicly on Twitter.
 
 Works together with:
-* [Snapkite Filters](https://github.com/fedosejev/snapkite-filters.git)
-* [Snapkite API Server](https://github.com/fedosejev/snapkite-api-server.git)
+* [Snapkite Filters](https://github.com/fedosejev/snapkite-filters.git) (dependency)
+* [Snapkite API Server](https://github.com/fedosejev/snapkite-api-server.git) (optional)
 
 ## Install
 
