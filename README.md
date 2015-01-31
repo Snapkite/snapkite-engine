@@ -1,6 +1,6 @@
 # Snapkite
 
-Snapkite gives you filtered stream of mobile photos posted publicly on Twitter.
+Snapkite gives you filtered stream of mobile photos posted publicly on Twitter. Example of use: [Snapkite.com](http://snapkite.com)
 
 ## Install
 
