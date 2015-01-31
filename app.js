@@ -9,6 +9,6 @@ require('./controllers/twitter')(SNAPKITE_CONFIG, function (tweet) {
   }
 
   if (SNAPKITE_CONFIG.application.pushTweets) {
-  	global.io.emit('tweet', tweet);
+    global.io.emit('tweet', tweet);
   }
 });

@@ -11,7 +11,12 @@ var save = function (tweet) {
       screen_name: tweet.user.screen_name
     },
     entities: {
-      media_url: tweet.entities.media[0].media_url
+      media: tweet.entities.media.map(function (media) {
+        return {
+          id_str: media.id_str,
+          media_url: media.media_url
+        };
+      })
     }
   });
 
