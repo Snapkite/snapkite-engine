@@ -1,6 +1,5 @@
 module.exports = function (config) {
 
-  var uuid = require('node-uuid');
   var server = require('http').createServer();
 
   global.io = require('socket.io')(server);
