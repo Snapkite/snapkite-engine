@@ -8,6 +8,7 @@ var isAdultContent = require('../filters/is-adult-content/is-adult-content');
 var isRetweet = require('../filters/is-retweet');
 var isMobileSource = require('../filters/is-mobile-source');
 var hasGeoCoordinates = require('../filters/has-geo-coordinates');
+var hasText = require('../filters/has-text');
 
 var isValidTweet = function (tweet, config) {
   var validTweet = true;
@@ -30,6 +31,10 @@ var isValidTweet = function (tweet, config) {
 
   if (validTweet && config.twitter.filters.isRetweet) {
     validTweet = (!isRetweet(tweet));
+  }
+
+  if (validTweet && config.twitter.filters.hasText) {
+    validTweet = (hasText(tweet));
   }
   
   return validTweet;

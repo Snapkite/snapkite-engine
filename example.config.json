@@ -23,7 +23,8 @@
 			"hasGeoCoordinates": true,
 			"hasMobilePhoto": true,
 			"isMobileSource": true,
-			"isRetweet": true
+			"isRetweet": true,
+			"hasText": true
 		}
 	},
 	"mongo": {
