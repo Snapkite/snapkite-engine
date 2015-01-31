@@ -1,7 +1,7 @@
 {
 	"application": {
-		"storeTweets": false,
-		"pushTweets": false,
+		"storeTweets": true,
+		"pushTweets": true,
 		"trackKeywords": ""
 	},
 	"twitter": {
@@ -13,7 +13,7 @@
 		},
 		"filters": {
 			"isAdultContent": true,
-			"hasGeoCoordinates": true,
+			"hasGeoCoordinates": false,
 			"hasMobilePhoto": true,
 			"isMobileSource": true,
 			"isRetweet": true,
