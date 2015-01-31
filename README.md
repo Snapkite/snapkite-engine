@@ -8,6 +8,7 @@ Snapkite gives you filtered stream of mobile photos posted publicly on Twitter.
 2. `cp example.config.json config.json`
 3. Add your Twitter API keys to `config.json`
 4. Change default MongoDB config in `config.json` as necessary
+5. Get filters: `git clone https://github.com/fedosejev/snapkite-filters.git`
 
 ## Run
 
