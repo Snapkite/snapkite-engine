@@ -1,5 +1,4 @@
 {
-	"environment": "development",
 	"application": {
 		"storeTweets": false,
 		"pushTweets": false,
@@ -21,12 +20,12 @@
 			"hasText": true
 		}
 	},
-	"mongo": {
+	"database": {
 		"hostname": "127.0.0.1",
 		"port": "27017",
 		"username": "",
 		"password": "",
-		"database": "snapkite"
+		"name": "snapkite"
 	},
 	"socket": {
 		"port": 3000

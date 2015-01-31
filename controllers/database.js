@@ -1,7 +1,7 @@
 var createMongoUrl = function (configuration) {
   configuration.hostname = (configuration.hostname || '127.0.0.1');
   configuration.port = (configuration.port || 27017);
-  configuration.database = (configuration.database || 'photos');
+  configuration.name = (configuration.name || 'snapkite');
 
   if (configuration.username && configuration.password) {
 
@@ -14,7 +14,7 @@ var createMongoUrl = function (configuration) {
             ":",
             configuration.port,
             "/",
-            configuration.database].join('');
+            configuration.name].join('');
   
   } else {
 
@@ -23,7 +23,7 @@ var createMongoUrl = function (configuration) {
             ":",
             configuration.port,
             "/",
-            configuration.database].join('');
+            configuration.name].join('');
   }
 };
 
