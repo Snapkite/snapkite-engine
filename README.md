@@ -21,6 +21,10 @@ Works together with:
 
 `npm start`
 
+## In The Wild
+
+[Snapkite](https://snapkite.com)
+
 ## License
 
 Snapkite is released under the MIT license.
