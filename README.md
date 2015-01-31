@@ -23,7 +23,7 @@ Works together with:
 
 ## Powered By
 
-[Snapkite.com](https://snapkite.com)
+[Snapkite.com](http://snapkite.com)
 
 ## License
 
