@@ -1,6 +1,6 @@
 {
 	"application": {
-		"pushTweets": true,
+		"pushTweets": false,
 		"storeTweets": false,
 		"trackKeywords": ""
 	},
@@ -12,12 +12,34 @@
 			"accessTokenSecret": ""
 		},
 		"filters": {
-			"isAdultContent": true,
-			"hasGeoCoordinates": false,
-			"hasMobilePhoto": true,
-			"isMobileSource": true,
-			"isRetweet": true,
-			"hasText": true
+			"isAdultContent": {
+				"on": true,
+				"allow": false
+			},
+			"hasGeoCoordinates": {
+				"on": false,
+				"allow": true
+			},
+			"hasMobilePhoto": {
+				"on": true,
+				"allow": true
+			},
+			"isMobileSource": {
+				"on": true,
+				"allow": true
+			},
+			"isRetweet": {
+				"on": true,
+				"allow": false
+			},
+			"hasText": {
+				"on": true,
+				"allow": true
+			},
+			"isPossiblySensitive": {
+				"on": true,
+				"allow": true
+			}
 		}
 	},
 	"database": {
