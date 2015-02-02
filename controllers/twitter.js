@@ -13,6 +13,16 @@ var hasText = require('../snapkite-filters/has-text/');
 var isValidTweet = function (tweet, config) {
   var validTweet = true;
 
+  //
+  // Check that track keywords are part of tweet's text
+  //
+  var trackKeywords = config.application.trackKeywords.replace(',','|');
+  var trackKeywordsRegex = new RegExp(trackKeywords, 'gim');
+
+  if (! tweet.text.match(trackKeywordsRegex)) {
+    validTweet = false;
+  }  
+
   if (validTweet && config.twitter.filters.isAdultContent) {
     validTweet = (!isAdultContent(tweet));
   }
