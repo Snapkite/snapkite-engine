@@ -29,6 +29,38 @@ Public stream of photos provided by Twitter contains explicit and adult content.
 7. Clone [Snapkite Filters](https://github.com/fedosejev/snapkite-filters.git): `git clone https://github.com/fedosejev/snapkite-filters.git` into `snapkite-engine/` directory
 8. Configure `isAdultContent` filter: copy sample config file and change list of adult keywords as needed: `cp snapkite-filters/is-adult-content/example.config.json snapkite-filters/is-adult-content/config.json`
 
+## Configure
+
+You can configure Snapkite Engine by editing `config.json`.
+
+### `application.pushTweets`
+
+Sends tweets to a socket connection.
+
+Expects `true` or `false`.
+
+### `application.storeTweets`
+
+Stores tweets in a MongoDB collection.
+
+Expects `true` or `false`.
+
+### `application.twitter.api`
+
+Twitter API keys that Twitter provides you with. You can find them [here](https://apps.twitter.com/).
+
+### `application.twitter.filters`
+
+Configure each individual filter.
+
+### `application.database`
+
+Your MongoDB connection configuration.
+
+### `application.socket`
+
+Socket configuration.
+
 ## Run
 
 `npm start`
