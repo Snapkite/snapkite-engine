@@ -3,6 +3,7 @@
 Snapkite Engine gives you filtered stream of photos posted publicly on Twitter.
 
 It can do 2 (either or both) things with those photos:
+
 1. Send them to a socket connection and allow all your clients to receive them in real-time.
 2. Store them in MongoDB and retrieve later with [Snapkite API Server](https://github.com/fedosejev/snapkite-api-server.git) or your own application.
 
@@ -34,8 +35,8 @@ Public stream of photos provided by Twitter contains explicit and adult content.
 
 ## Powered By
 
-[Snapkite.com](http://snapkite.com)
-[Selfie.how](http://selfie.how)
+* [Snapkite.com](http://snapkite.com)
+* [Selfie.how](http://selfie.how)
 
 ## License
 
