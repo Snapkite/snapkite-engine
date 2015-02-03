@@ -35,13 +35,13 @@ You can configure Snapkite Engine by editing `config.json`.
 
 ### `application.pushTweets`
 
-Sends tweets to a socket connection.
+Send tweets to a socket connection?
 
 Expects `true` or `false`.
 
 ### `application.storeTweets`
 
-Stores tweets in a MongoDB collection.
+Store tweets in a MongoDB collection?
 
 Expects `true` or `false`.
 
