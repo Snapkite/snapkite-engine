@@ -33,31 +33,31 @@ Public stream of photos provided by Twitter contains explicit and adult content.
 
 You can configure Snapkite Engine by editing `config.json`.
 
-### `application.pushTweets`
+#### `application.pushTweets`
 
 Send tweets to a socket connection?
 
 Expects `true` or `false`.
 
-### `application.storeTweets`
+#### `application.storeTweets`
 
 Store tweets in a MongoDB collection?
 
 Expects `true` or `false`.
 
-### `application.twitter.api`
+#### `application.twitter.api`
 
 Twitter API keys that Twitter provides you with. You can find them [here](https://apps.twitter.com/).
 
-### `application.twitter.filters`
+#### `application.twitter.filters`
 
-Configure each individual filter.
+Configure each filter individually.
 
-### `application.database`
+#### `application.database`
 
-Your MongoDB connection configuration.
+MongoDB connection configuration.
 
-### `application.socket`
+#### `application.socket`
 
 Socket configuration.
 
