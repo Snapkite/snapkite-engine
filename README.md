@@ -49,9 +49,13 @@ Expects `true` or `false`.
 
 Send keyword stats to client?
 
+Expects `true` or `false`.
+
 #### `application.trackKeywords`
 
 Which keywords should we ask Twitter to track for us?
+
+Expects a string of keywords separated by a single whitespace, e.g.: `selfie london`
 
 Read this for more details: https://dev.twitter.com/streaming/overview/request-parameters#track
 
