@@ -33,8 +33,6 @@ require('./controllers/twitter')(SNAPKITE_CONFIG, function (tweet) {
 
   tweet = simplifyTweet(tweet);
 
-  console.dir(tweet);
-
   if (SNAPKITE_CONFIG.application.storeTweets) {
     require('./controllers/tweet').save(tweet);
   }
