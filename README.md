@@ -106,10 +106,6 @@ Socket configuration.
 
 Here is the list of helpful `mongo` shell commands.
 
-#### Remove `tweet` collection
-
-`db.tweet.drop();`
-
 #### Show number of tweets stored
 
 `db.tweet.count();`
@@ -129,6 +125,17 @@ Here is the list of helpful `mongo` shell commands.
 #### Show sorted list of all keywords without their counters
 
 `Object.keys(db.keyword.findOne().data).sort();`
+
+#### Delete `tweet` collection
+
+`db.tweet.drop();`
+
+#### Delete `snapkite` database
+
+```javascript
+use snapkite
+db.drop();
+```
 
 ## Run
 
