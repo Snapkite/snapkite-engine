@@ -133,7 +133,7 @@ Here is the list of helpful `mongo` shell commands.
 #### Delete `snapkite` database
 
 ```javascript
-use snapkite
+use snapkite;
 db.drop();
 ```
 
