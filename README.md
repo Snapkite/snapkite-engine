@@ -83,7 +83,7 @@ Socket configuration.
 2. Open `mongo` shell and create database:
 
   ```
-  use snapkite
+  use snapkite;
   ```
 3. Create capped `tweet` collection, 100MB in size, with maximum number of documents of 5000:
   ```javascript
