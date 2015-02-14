@@ -35,7 +35,7 @@ You can configure Snapkite Engine by editing `config.json`.
 
 #### `application.pushTweets`
 
-Send tweets to a socket connection?
+Send tweets to client?
 
 Expects `true` or `false`.
 
@@ -44,6 +44,16 @@ Expects `true` or `false`.
 Store tweets in a MongoDB collection?
 
 Expects `true` or `false`.
+
+#### `application.pushKeywords`
+
+Send keyword stats to client?
+
+#### `application.trackKeywords`
+
+Which keywords should we ask Twitter to track for us?
+
+Read this for more details: https://dev.twitter.com/streaming/overview/request-parameters#track
 
 #### `application.twitter.api`
 
@@ -60,6 +70,61 @@ MongoDB connection configuration.
 #### `application.socket`
 
 Socket configuration.
+
+## MongoDB
+
+### Install
+
+1. Install MongoDB: http://docs.mongodb.org/manual/installation/
+2. Open `mongo` shell and create database:
+
+  ```
+  use snapkite
+  ```
+3. Create capped `tweet` collection, 100MB in size, with maximum number of documents of 5000:
+  ```javascipt
+  db.createCollection('tweet', { capped: true, size: 100000000, max: 5000});
+  ```
+
+  Read more about capped collections in MongoDB: http://docs.mongodb.org/manual/core/capped-collections/
+
+4. Create `keyword` collection:
+  ```javascript
+  db.createCollection('keyword');
+  ```
+
+5. Insert the only document needed:
+  ```javascript
+  db.keyword.insert({ data: {} });
+  ```
+
+### Manipulate
+
+Here is the list of helpful `mongo` shell commands.
+
+#### Remove `tweet` collection
+
+`db.tweet.drop();`
+
+#### Show number of tweets stored
+
+`db.tweet.count();`
+
+#### Show all `tweet` collection stats
+
+`db.tweet.stats();`
+
+#### Show latest 5 tweets
+
+`db.tweet.find().sort({_id:-1}).limit(5).pretty();`
+
+#### Show keywords stored
+
+`db.keyword.findOne().data;`
+
+#### Show sorted list of all keywords without their counters
+
+`Object.keys(db.keyword.findOne().data).sort();`
 
 ## Run
 

@@ -1,24 +1,3 @@
-function simplifyTweet(tweet) {
-
-  //
-  // Clean tweet's format
-  //
-  var simpleTweet = {
-    text: tweet.text,
-    id: tweet.id_str,
-    user: {
-      id: tweet.user.id_str
-    },
-    media: tweet.entities.media.map(function (media) {
-      return {
-        url: media.media_url
-      };
-    })
-  };
-
-  return simpleTweet;
-}
-
 var SNAPKITE_CONFIG = require('./config.json');
 
 if (SNAPKITE_CONFIG.application.pushTweets) {
@@ -31,11 +10,23 @@ if (SNAPKITE_CONFIG.application.storeTweets) {
 
 require('./controllers/twitter')(SNAPKITE_CONFIG, function (tweet) {
 
-  tweet = simplifyTweet(tweet);
+  var utils = require('./utils');
+
+  tweet = utils.simplify(tweet);
 
   if (SNAPKITE_CONFIG.application.storeTweets) {
     require('./controllers/tweet').save(tweet);
   }
+
+  utils.tokenize(tweet.text).forEach(function (token) {
+    require('./controllers/keyword').save(token, SNAPKITE_CONFIG.application.trackKeywords.split(' '), function (keywords) {
+
+      if (SNAPKITE_CONFIG.application.pushKeywords) {
+        global.io.emit('keywords', tweet);
+      }
+
+    });
+  });
 
   if (SNAPKITE_CONFIG.application.pushTweets) {
     global.io.emit('tweet', tweet);
