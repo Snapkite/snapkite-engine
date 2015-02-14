@@ -2,6 +2,7 @@
 	"application": {
 		"pushTweets": true,
 		"storeTweets": false,
+		"pushKeywords": true,
 		"trackKeywords": ""
 	},
 	"twitter": {

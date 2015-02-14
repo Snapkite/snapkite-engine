@@ -7,7 +7,7 @@ It can do 2 (either or both) things with those photos:
 1. Send them to a socket connection and allow all your clients to receive them in real-time.
 2. Store them in MongoDB and retrieve later with [Snapkite API Server](https://github.com/fedosejev/snapkite-api-server.git) or your own application.
 
-Please note that Snapkite Engine depends on filters that are maintained in a [separate repository](https://github.com/fedosejev/snapkite-filters.git).
+__Please note__: Snapkite Engine depends on filters that are maintained in a [separate repository](https://github.com/fedosejev/snapkite-filters.git).
 
 ## Warning
 
@@ -35,7 +35,7 @@ You can configure Snapkite Engine by editing `config.json`.
 
 #### `application.pushTweets`
 
-Send tweets to a socket connection?
+Send tweets to client?
 
 Expects `true` or `false`.
 
@@ -44,6 +44,20 @@ Expects `true` or `false`.
 Store tweets in a MongoDB collection?
 
 Expects `true` or `false`.
+
+#### `application.pushKeywords`
+
+Send keyword stats to client?
+
+Expects `true` or `false`.
+
+#### `application.trackKeywords`
+
+Which keywords should we ask Twitter to track for us?
+
+Expects a string of keywords separated by a single whitespace, e.g.: `selfie london`
+
+Read this for more details: https://dev.twitter.com/streaming/overview/request-parameters#track
 
 #### `application.twitter.api`
 
@@ -60,6 +74,68 @@ MongoDB connection configuration.
 #### `application.socket`
 
 Socket configuration.
+
+## MongoDB
+
+### Install
+
+1. Install MongoDB: http://docs.mongodb.org/manual/installation/
+2. Open `mongo` shell and create database:
+
+  ```
+  use snapkite;
+  ```
+3. Create capped `tweet` collection, 100MB in size, with maximum number of documents of 5000:
+  ```javascript
+  db.createCollection('tweet', { capped: true, size: 100000000, max: 5000});
+  ```
+
+  Read more about capped collections in MongoDB: http://docs.mongodb.org/manual/core/capped-collections/
+
+4. Create `keyword` collection:
+  ```javascript
+  db.createCollection('keyword');
+  ```
+
+5. Insert the only document needed:
+  ```javascript
+  db.keyword.insert({ data: {} });
+  ```
+
+### Manipulate
+
+Here is the list of helpful `mongo` shell commands.
+
+#### Show number of tweets stored
+
+`db.tweet.count();`
+
+#### Show all `tweet` collection stats
+
+`db.tweet.stats();`
+
+#### Show latest 5 tweets
+
+`db.tweet.find().sort({_id:-1}).limit(5).pretty();`
+
+#### Show keywords stored
+
+`db.keyword.findOne().data;`
+
+#### Show sorted list of all keywords without their counters
+
+`Object.keys(db.keyword.findOne().data).sort();`
+
+#### Delete `tweet` collection
+
+`db.tweet.drop();`
+
+#### Delete `snapkite` database
+
+```javascript
+use snapkite;
+db.drop();
+```
 
 ## Run
 
