@@ -1,14 +1,10 @@
 var Tweet = require('../models/Tweet');
 
 var save = function (tweet) {
-  var tweet = new Tweet({
-    id: tweet.id,
-    text: tweet.text,
-    user: {
-      id: tweet.user.id
-    },
-    media: tweet.media
-  });
+
+  // TODO: validate tweet
+
+  var tweet = new Tweet(tweet);
 
   tweet.save(function(error, tweet) {
     if (error) {
