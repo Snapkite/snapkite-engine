@@ -1,9 +1,10 @@
 {
 	"application": {
 		"pushTweets": true,
-		"storeTweets": false,
+		"storeTweets": true,
 		"pushKeywords": true,
-		"trackKeywords": ""
+		"trackKeywords": "",
+		"filters": []
 	},
 	"twitter": {
 		"api": {
@@ -11,36 +12,6 @@
 			"consumerSecret": "",
 			"accessTokenKey": "",
 			"accessTokenSecret": ""
-		},
-		"filters": {
-			"isAdultContent": {
-				"on": true,
-				"allow": false
-			},
-			"hasGeoCoordinates": {
-				"on": false,
-				"allow": true
-			},
-			"hasMobilePhoto": {
-				"on": true,
-				"allow": true
-			},
-			"isMobileSource": {
-				"on": true,
-				"allow": true
-			},
-			"isRetweet": {
-				"on": true,
-				"allow": false
-			},
-			"hasText": {
-				"on": true,
-				"allow": true
-			},
-			"isPossiblySensitive": {
-				"on": true,
-				"allow": false
-			}
 		}
 	},
 	"database": {

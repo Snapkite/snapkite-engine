@@ -1,16 +1,5 @@
 var Twitter = require('node-tweet-stream');
 
-//
-// Tweet filters
-//
-var hasMobilePhoto = require('../snapkite-filters/has-mobile-photo/');
-var isAdultContent = require('../snapkite-filters/is-adult-content/');
-var isRetweet = require('../snapkite-filters/is-retweet/');
-var isMobileSource = require('../snapkite-filters/is-mobile-source/');
-var hasGeoCoordinates = require('../snapkite-filters/has-geo-coordinates/');
-var hasText = require('../snapkite-filters/has-text/');
-var isPossiblySensitive = require('../snapkite-filters/is-possibly-sensitive/');
-
 var isValidTweet = function (tweet, config) {
   var validTweet = true;
 
@@ -24,61 +13,12 @@ var isValidTweet = function (tweet, config) {
     validTweet = false;
   }
 
-  if (validTweet && config.twitter.filters.isPossiblySensitive.on) {
-    if (config.twitter.filters.isPossiblySensitive.allow) {
-      validTweet = isPossiblySensitive(tweet);
-    } else {
-      validTweet = (!isPossiblySensitive(tweet));
+  // Validate tweet with filters
+  config.application.filters.forEach(function (filter) {
+    if (validTweet) {
+      validTweet = require('../filters/' + filter).isValid(tweet);
     }
-  }
-
-  if (validTweet && config.twitter.filters.isAdultContent.on) {
-    if (config.twitter.filters.isAdultContent.allow) {
-      validTweet = isAdultContent(tweet);
-    } else {
-      validTweet = (!isAdultContent(tweet));
-    }
-  }
-
-  if (validTweet && config.twitter.filters.hasGeoCoordinates.on) {
-    if (config.twitter.filters.hasGeoCoordinates.allow) {
-      validTweet = hasGeoCoordinates(tweet);
-    } else {
-      validTweet = (!hasGeoCoordinates(tweet));
-    }
-  }
-
-  if (validTweet && config.twitter.filters.hasMobilePhoto.on) {
-    if (config.twitter.filters.hasMobilePhoto.allow) {
-      validTweet = hasMobilePhoto(tweet);
-    } else {
-      validTweet = (!hasMobilePhoto(tweet));
-    }
-  }
-
-  if (validTweet && config.twitter.filters.isMobileSource.on) {
-    if (config.twitter.filters.isMobileSource.allow) {
-      validTweet = isMobileSource(tweet);
-    } else {
-      validTweet = (!isMobileSource(tweet));
-    }
-  }
-
-  if (validTweet && config.twitter.filters.isRetweet.on) {
-    if (config.twitter.filters.isRetweet.allow) {
-      validTweet = isRetweet(tweet);
-    } else {
-      validTweet = (!isRetweet(tweet));
-    }
-  }
-
-  if (validTweet && config.twitter.filters.hasText.on) {
-    if (config.twitter.filters.hasText.allow) {
-      validTweet = hasText(tweet);
-    } else {
-      validTweet = (!hasText(tweet));
-    }
-  }
+  });
 
   return validTweet;
 };
