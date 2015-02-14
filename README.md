@@ -56,7 +56,7 @@ Read this for more details: https://dev.twitter.com/streaming/overview/request-p
 
 #### `application.filters`
 
-List of Snapkite filters that this application should use. You can find the list of all available filters [here](https://github.com/fedosejev/snapkite-engine/tree/master/filters).
+List of Snapkite filters that this application should use. You can find the list of all available filters [here](https://github.com/fedosejev/snapkite-engine/tree/master/filters/README.md).
 
 #### `application.twitter.api`
 
@@ -72,7 +72,7 @@ Socket configuration.
 
 ## Filters
 
-[Everything you need to know](https://github.com/fedosejev/snapkite-engine/tree/master/filters) about Snapkite filters.
+[Everything you need to know](https://github.com/fedosejev/snapkite-engine/tree/master/filters/README.md) about Snapkite filters.
 
 ## MongoDB
 
