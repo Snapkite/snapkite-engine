@@ -1,6 +1,6 @@
 {
 	"application": {
-		"pushTweets": false,
+		"pushTweets": true,
 		"storeTweets": false,
 		"trackKeywords": ""
 	},
@@ -38,7 +38,7 @@
 			},
 			"isPossiblySensitive": {
 				"on": true,
-				"allow": true
+				"allow": false
 			}
 		}
 	},
