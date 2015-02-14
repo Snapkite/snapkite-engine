@@ -86,7 +86,7 @@ Socket configuration.
   ```
 3. Create capped `tweet` collection, 100MB in size, with maximum number of documents of 5000:
   ```javascript
-  db.createCollection('tweet', { capped: true, size: 100000000, max: 5000});
+  db.createCollection('tweet', {capped: true, size: 100000000, max: 5000});
   ```
 
   Read more about capped collections in MongoDB: http://docs.mongodb.org/manual/core/capped-collections/
