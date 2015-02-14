@@ -7,7 +7,7 @@ It can do 2 (either or both) things with those photos:
 1. Send them to a socket connection and allow all your clients to receive them in real-time.
 2. Store them in MongoDB and retrieve later with [Snapkite API Server](https://github.com/fedosejev/snapkite-api-server.git) or your own application.
 
-Please note that Snapkite Engine depends on filters that are maintained in a [separate repository](https://github.com/fedosejev/snapkite-filters.git).
+__Please note__: Snapkite Engine depends on filters that are maintained in a [separate repository](https://github.com/fedosejev/snapkite-filters.git).
 
 ## Warning
 
