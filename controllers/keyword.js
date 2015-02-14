@@ -26,7 +26,7 @@ var save = function (keyword, trackKeywords, callback) {
     }
 
     if (typeof keywords.data[keyword] === 'undefined') {
-      keywords.data[keyword] = 0;
+      keywords.data[keyword] = 1;
     } else {
       var currentKeywordCounter = keywords.data[keyword];
       keywords.data[keyword] = currentKeywordCounter + 1;
