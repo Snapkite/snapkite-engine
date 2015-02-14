@@ -75,6 +75,10 @@ MongoDB connection configuration.
 
 Socket configuration.
 
+## Filters
+
+[Everything you need to know](https://github.com/fedosejev/snapkite-engine/tree/master/filters) about Snapkite filters.
+
 ## MongoDB
 
 ### Install
