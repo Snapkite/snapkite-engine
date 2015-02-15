@@ -40,8 +40,6 @@ var save = function (keyword, trackKeywords, callback) {
         return;
       }
 
-      console.log('Saved keyword "' + keyword + '"');
-
       callback(keywords.data);
     });
   });
