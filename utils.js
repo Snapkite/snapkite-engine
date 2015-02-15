@@ -6,6 +6,7 @@ function simplify(tweet) {
 
   //
   // Clean tweet's format
+  // https://dev.twitter.com/overview/api/tweets
   //
   var simpleTweet = {
     text: removeImageUrlFromText(tweet.text),
@@ -18,8 +19,16 @@ function simplify(tweet) {
         url: media.media_url
       };
     }),
-    lang: tweet.lang
+    coordinates: {
+      latitude: null,
+      longitude: null
+    }
   };
+
+  if (tweet.coordinates) {
+    simpleTweet.coordinates.latitude = tweet.coordinates.coordinates[1];
+    simpleTweet.coordinates.longitude = tweet.coordinates.coordinates[0];
+  }
 
   return simpleTweet;
 }
