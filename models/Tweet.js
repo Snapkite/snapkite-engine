@@ -10,7 +10,11 @@ var tweetSchema = new mongoose.Schema({
   },
   media: [{
     url: {type: String, required: true}
-  }]
+  }],
+  coordinates: {
+    latitude: {type: String, required: false},
+    longitude: {type: String, required: false}
+  }
 }, { collection: COLLECTION_NAME });
 
 module.exports = mongoose.model('Tweet', tweetSchema);
