@@ -3,6 +3,7 @@
 		"pushTweets": true,
 		"storeTweets": true,
 		"pushKeywords": true,
+		"storeKeywords": true,
 		"trackKeywords": "",
 		"filters": []
 	},

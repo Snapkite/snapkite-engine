@@ -18,15 +18,17 @@ require('./controllers/twitter')(SNAPKITE_CONFIG, function (tweet) {
     require('./controllers/tweet').save(tweet);
   }
 
-  utils.tokenize(tweet.text).forEach(function (token) {
-    require('./controllers/keyword').save(token, SNAPKITE_CONFIG.application.trackKeywords.split(' '), function (keywords) {
+  if (SNAPKITE_CONFIG.application.storeKeywords) {
+    utils.tokenize(tweet.text).forEach(function (token) {
+      require('./controllers/keyword').save(token, SNAPKITE_CONFIG.application.trackKeywords.split(' '), function (keywords) {
 
-      if (SNAPKITE_CONFIG.application.pushKeywords) {
-        global.io.emit('keywords', tweet);
-      }
+        if (SNAPKITE_CONFIG.application.pushKeywords) {
+          global.io.emit('keywords', tweet);
+        }
 
+      });
     });
-  });
+  }
 
   if (SNAPKITE_CONFIG.application.pushTweets) {
     global.io.emit('tweet', tweet);
