@@ -5,6 +5,7 @@
 		"pushKeywords": true,
 		"storeKeywords": true,
 		"trackKeywords": "",
+		"excludeKeywords": "",
 		"filters": []
 	},
 	"twitter": {

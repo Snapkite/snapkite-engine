@@ -1,7 +1,39 @@
 var Twitter = require('node-tweet-stream');
 
+var MINIMUM_IMAGE_WIDTH = 300;
+var MINIMUM_IMAGE_HEIGHT = 300;
+
+function isLargeEnoughMedia(media) {
+  if (
+    media.sizes
+    && media.sizes.medium
+    && media.sizes.medium.w
+    && media.sizes.medium.w >= MINIMUM_IMAGE_WIDTH
+    && media.sizes.medium.h
+    && media.sizes.medium.h >= MINIMUM_IMAGE_HEIGHT
+  ) {
+    return true;
+  }
+
+  return false;
+}
+
+function isValidMedia(tweet) {
+  if (
+    tweet.entities
+    && tweet.entities.media
+    && tweet.entities.media[0]
+    && tweet.entities.media[0].type
+    && tweet.entities.media[0].type === "photo"
+    && isLargeEnoughMedia(tweet.entities.media)
+  ) {
+    return true;
+  }
+
+  return false;
+}
+
 var isValidTweet = function (tweet, config) {
-  var validTweet = true;
 
   //
   // Check that track keywords are part of tweet's text
@@ -10,8 +42,24 @@ var isValidTweet = function (tweet, config) {
   var trackKeywordsRegex = new RegExp('[' + trackKeywords + ']', 'gim');
 
   if (! tweet.text.match(trackKeywordsRegex)) {
-    validTweet = false;
+    return false;
   }
+
+  //
+  // Check that exclude keywords are NOT part of tweet's text
+  //
+  var excludeKeywords = config.application.excludeKeywords.replace(',','|');
+  var excludeKeywordsRegex = new RegExp('[' + excludeKeywords + ']', 'gim');
+
+  if (tweet.text.match(excludeKeywordsRegex)) {
+    return false;
+  }
+
+  if (! isValidMedia(tweet)) {
+    return false;
+  }
+
+  var validTweet = true;
 
   // Validate tweet with filters
   config.application.filters.forEach(function (filter) {
