@@ -38,7 +38,7 @@ var isValidTweet = function (tweet, config) {
   //
   // Check that track keywords are part of tweet's text
   //
-  var trackKeywords = config.application.trackKeywords.replace(',','|');
+  var trackKeywords = config.application.trackKeywords.replace(',', '|').replace(' ', '|');
   var trackKeywordsRegex = new RegExp('[' + trackKeywords + ']', 'gim');
 
   if (! tweet.text.match(trackKeywordsRegex)) {
@@ -48,7 +48,7 @@ var isValidTweet = function (tweet, config) {
   //
   // Check that exclude keywords are NOT part of tweet's text
   //
-  var excludeKeywords = config.application.excludeKeywords.replace(',','|');
+  var excludeKeywords = config.application.excludeKeywords.replace(',', '|');
   var excludeKeywordsRegex = new RegExp('[' + excludeKeywords + ']', 'gim');
 
   if (tweet.text.match(excludeKeywordsRegex)) {
@@ -78,7 +78,8 @@ module.exports = function (config, handleTweet) {
   var TWITTER_ACCESS_TOKEN_SECRET = config.twitter.api.accessTokenSecret;
   var TWITTER_PICTURE_TRACK_KEYWORD = "pic twitter com";
 
-  var keywords = [TWITTER_PICTURE_TRACK_KEYWORD, config.application.trackKeywords].join(' ');
+  var keywords = TWITTER_PICTURE_TRACK_KEYWORD;
+  //var keywords = [TWITTER_PICTURE_TRACK_KEYWORD, config.application.trackKeywords].join(' ');
 
   var twitter = new Twitter({
     consumer_key: TWITTER_CONSUMER_KEY,
