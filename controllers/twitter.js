@@ -78,8 +78,9 @@ module.exports = function (config, handleTweet) {
   var TWITTER_ACCESS_TOKEN_SECRET = config.twitter.api.accessTokenSecret;
   var TWITTER_PICTURE_TRACK_KEYWORD = "pic twitter com";
 
-  var keywords = TWITTER_PICTURE_TRACK_KEYWORD;
-  var keywords = [TWITTER_PICTURE_TRACK_KEYWORD, config.application.trackKeywords].join(' ');
+  var keywords = config.application.trackKeywords.split(',').map(function (keyword) {
+    return (TWITTER_PICTURE_TRACK_KEYWORD + ' ' + keyword);
+  });
 
   var twitter = new Twitter({
     consumer_key: TWITTER_CONSUMER_KEY,
