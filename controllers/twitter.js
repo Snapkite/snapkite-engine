@@ -7,7 +7,7 @@ var isValidTweet = function (tweet, config) {
   // Check that track keywords are part of tweet's text
   //
   var trackKeywords = config.application.trackKeywords.replace(',','|');
-  var trackKeywordsRegex = new RegExp(trackKeywords, 'gim');
+  var trackKeywordsRegex = new RegExp('[' + trackKeywords + ']', 'gim');
 
   if (! tweet.text.match(trackKeywordsRegex)) {
     validTweet = false;
