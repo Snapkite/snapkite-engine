@@ -25,7 +25,7 @@ function isValidMedia(tweet) {
     && tweet.entities.media[0]
     && tweet.entities.media[0].type
     && tweet.entities.media[0].type === "photo"
-    && isLargeEnoughMedia(tweet.entities.media)
+    && isLargeEnoughMedia(tweet.entities.media[0])
   ) {
     return true;
   }
@@ -38,8 +38,8 @@ var isValidTweet = function (tweet, config) {
   //
   // Check that track keywords are part of tweet's text
   //
-  var trackKeywords = config.application.trackKeywords.replace(',', '|').replace(' ', '|');
-  var trackKeywordsRegex = new RegExp('[' + trackKeywords + ']', 'gim');
+  var trackKeywords = config.application.trackKeywords.replace(/[, ]/g, '|');
+  var trackKeywordsRegex = new RegExp(trackKeywords, 'gim');
 
   if (! tweet.text.match(trackKeywordsRegex)) {
     return false;
@@ -48,8 +48,8 @@ var isValidTweet = function (tweet, config) {
   //
   // Check that exclude keywords are NOT part of tweet's text
   //
-  var excludeKeywords = config.application.excludeKeywords.replace(',', '|');
-  var excludeKeywordsRegex = new RegExp('[' + excludeKeywords + ']', 'gim');
+  var excludeKeywords = config.application.excludeKeywords.replace(/[, ]/g, '|');
+  var excludeKeywordsRegex = new RegExp(excludeKeywords, 'gim');
 
   if (tweet.text.match(excludeKeywordsRegex)) {
     return false;
@@ -79,7 +79,7 @@ module.exports = function (config, handleTweet) {
   var TWITTER_PICTURE_TRACK_KEYWORD = "pic twitter com";
 
   var keywords = TWITTER_PICTURE_TRACK_KEYWORD;
-  //var keywords = [TWITTER_PICTURE_TRACK_KEYWORD, config.application.trackKeywords].join(' ');
+  var keywords = [TWITTER_PICTURE_TRACK_KEYWORD, config.application.trackKeywords].join(' ');
 
   var twitter = new Twitter({
     consumer_key: TWITTER_CONSUMER_KEY,
