@@ -50,9 +50,15 @@ Expects `true` or `false`.
 
 Which keywords should we ask Twitter to track for us?
 
-Expects a string of keywords separated by a single whitespace, e.g.: `selfie london`
+Expects a string of keywords separated by a single whitespace or comma, e.g.: `selfie london` or `selfie,london`
 
 Read this for more details: https://dev.twitter.com/streaming/overview/request-parameters#track
+
+#### `application.excludeKeywords`
+
+Which keywords should be ignored?
+
+Expects a string of keywords separated by a comma, e.g.: `exclude,these,keywords`
 
 #### `application.filters`
 
