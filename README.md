@@ -1,6 +1,6 @@
 # Snapkite Engine
 
-Snapkite Engine gives you filtered stream of photos posted publicly on Twitter.
+**Snapkite Engine gives you filtered stream of photos posted publicly on Twitter.**
 
 It can do 2 (either or both) things with those photos:
 

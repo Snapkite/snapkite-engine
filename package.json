@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/fedosejev/snapkite.git"
+    "url": "https://github.com/snapkite/snapkite.git"
   },
   "author": "Artemij Fedosejev",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fedosejev/snapkite/issues"
+    "url": "https://github.com/snapkite/snapkite/issues"
   },
-  "homepage": "https://github.com/fedosejev/snapkite",
+  "homepage": "https://github.com/snapkite/snapkite",
   "dependencies": {
     "mongoose": "^3.8.22",
     "node-tweet-stream": "^1.6.0",
