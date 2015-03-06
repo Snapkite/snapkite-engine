@@ -3,7 +3,6 @@ function removeImageUrlFromText(text) {
 }
 
 function simplify(tweet) {
-
   //
   // Clean tweet's format
   // https://dev.twitter.com/overview/api/tweets

@@ -5,7 +5,7 @@ Snapkite Engine gives you filtered stream of photos posted publicly on Twitter.
 It can do 2 (either or both) things with those photos:
 
 1. Send them to a socket connection and allow all your clients to receive them in real-time.
-2. Store them in MongoDB and retrieve later with [Snapkite API Server](https://github.com/fedosejev/snapkite-api-server.git) or your own application.
+2. Store them in MongoDB and retrieve later with [Snapkite API Server](https://github.com/snapkite/snapkite-api-server.git) or your own application.
 
 ## Warning
 
@@ -17,7 +17,7 @@ Public stream of photos provided by Twitter contains explicit and adult content.
 
 ## Install
 
-1. `git clone https://github.com/fedosejev/snapkite.git`
+1. `git clone https://github.com/snapkite/snapkite.git`
 2. `cd snapkite-engine`
 3. `npm install`
 4. `cp example.config.json config.json`
@@ -62,7 +62,7 @@ Expects a string of keywords separated by a comma, e.g.: `exclude,these,keywords
 
 #### `application.filters`
 
-List of Snapkite filters that this application should use. You can find the list of all available filters [here](https://github.com/fedosejev/snapkite-engine/tree/master/filters/README.md).
+List of Snapkite filters that this application should use. You can find the list of all available filters [here](https://github.com/snapkite/snapkite-engine/tree/master/filters/README.md).
 
 #### `application.twitter.api`
 
@@ -78,7 +78,7 @@ Socket configuration.
 
 ## Filters
 
-[Everything you need to know](https://github.com/fedosejev/snapkite-engine/tree/master/filters/README.md) about Snapkite filters.
+[Everything you need to know](https://github.com/snapkite/snapkite-engine/tree/master/filters/README.md) about Snapkite filters.
 
 ## MongoDB
 
@@ -148,8 +148,8 @@ db.drop();
 
 ## Powered By
 
-* [Snapkite.com](http://snapkite.com)
-* [Selfie.how](http://selfie.how)
+* [Map.Snapkite.com](http://map.snapkite.com)
+* [Selfie.Snapkite.com](http://selfie.snapkite.com)
 
 ## License
 
