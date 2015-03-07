@@ -1,3 +1,5 @@
+![Snapkite Engine logo](https://github.com/Snapkite/snapkite-engine/blob/master/snapkite-engine-logo.png)
+
 # Snapkite Engine
 
 **Snapkite Engine gives you filtered stream of photos posted publicly on Twitter.**
