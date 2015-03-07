@@ -78,7 +78,7 @@ Socket configuration.
 
 ## Filters
 
-[Everything you need to know](https://github.com/snapkite/snapkite-engine/tree/master/filters/README.md) about Snapkite filters.
+[Everything you need to know](https://github.com/snapkite/snapkite-filters/blob/master/README.md) about Snapkite filters.
 
 ## MongoDB
 
