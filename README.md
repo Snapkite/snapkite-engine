@@ -7,6 +7,11 @@ It can do 2 (either or both) things with those photos:
 1. Send them to a socket connection and allow all your clients to receive them in real-time.
 2. Store them in MongoDB and retrieve later with [Snapkite API Server](https://github.com/snapkite/snapkite-api-server.git) or your own application.
 
+## Examples
+
+* [Map.Snapkite.com](http://map.snapkite.com)
+* [Selfie.Snapkite.com](http://selfie.snapkite.com)
+
 ## Warning
 
 Public stream of photos provided by Twitter contains explicit and adult content. You can filter out this content to an extent, but you can't guarantee that it's 100% filtered.
@@ -145,11 +150,6 @@ db.drop();
 ## Run
 
 `npm start`
-
-## Powered By
-
-* [Map.Snapkite.com](http://map.snapkite.com)
-* [Selfie.Snapkite.com](http://selfie.snapkite.com)
 
 ## License
 
