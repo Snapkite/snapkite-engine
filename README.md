@@ -11,8 +11,8 @@ It can do 2 (either or both) things with those photos:
 
 ## Examples
 
+* [Snapterest.com](http://snapterest.com)
 * [Map.Snapkite.com](http://map.snapkite.com)
-* [Selfie.Snapkite.com](http://selfie.snapkite.com)
 
 ## Warning
 
