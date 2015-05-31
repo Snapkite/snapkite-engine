@@ -19,5 +19,10 @@
   "bugs": {
     "url": "https://github.com/snapkite/snapkite-engine/issues"
   },
-  "homepage": "https://github.com/snapkite/snapkite-engine"
+  "homepage": "https://github.com/snapkite/snapkite-engine",
+  "dependencies": {
+    "mongoose": "^3.8.22",
+    "node-tweet-stream": "^1.6.0",
+    "socket.io": "^1.3.2"
+  }
 }
