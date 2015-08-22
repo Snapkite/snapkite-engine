@@ -51,7 +51,7 @@ var isValidTweet = function (tweet, config) {
   var excludeKeywords = config.application.excludeKeywords.replace(/[, ]/g, '|');
   var excludeKeywordsRegex = new RegExp(excludeKeywords, 'gim');
 
-  if (tweet.text.match(excludeKeywordsRegex)) {
+  if (excludeKeywords.length && tweet.text.match(excludeKeywordsRegex)) {
     return false;
   }
 
