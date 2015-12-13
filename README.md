@@ -24,7 +24,7 @@ Public stream of photos provided by Twitter contains explicit and adult content.
 
 ## Install
 
-1. `git clone https://github.com/snapkite/snapkite.git`
+1. `git clone https://github.com/Snapkite/snapkite-engine.git`
 2. `cd snapkite-engine`
 3. `npm install`
 4. `cp example.config.json config.json`
